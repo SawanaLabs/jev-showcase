@@ -215,7 +215,7 @@ function App() {
           </a>
           <a
             className="hover:text-foreground"
-            href="https://github.com/waitlistSawana/jev-showcase"
+            href="https://github.com/SawanaLabs/jev-showcase"
             target="_blank"
             rel="noreferrer"
           >

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://waitlistsawana.github.io/jev-showcase/sitemap.xml
+Sitemap: https://sawanalabs.github.io/jev-showcase/sitemap.xml

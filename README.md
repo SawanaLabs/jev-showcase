@@ -2,7 +2,7 @@
 
 A source-linked showcase of real Jev builds, organized around one question: what decision does Jev own inside each workflow?
 
-Live site: <https://waitlistsawana.github.io/jev-showcase/>
+Live site: <https://sawanalabs.github.io/jev-showcase/>
 
 ## Architecture
 

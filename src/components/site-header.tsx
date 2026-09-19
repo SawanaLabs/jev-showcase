@@ -3,7 +3,7 @@ import { GitFork, Moon, Sun } from "lucide-react"
 import { useTheme } from "@/components/theme-provider"
 import { Button } from "@/components/ui/button"
 
-const repoUrl = "https://github.com/waitlistSawana/jev-showcase"
+const repoUrl = "https://github.com/SawanaLabs/jev-showcase"
 
 export function SiteHeader() {
   const { theme, setTheme } = useTheme()
