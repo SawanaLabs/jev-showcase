@@ -1,0 +1,167 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #f3f1ea;
+  --foreground: #171815;
+  --card: #ebe9e1;
+  --card-foreground: #171815;
+  --popover: #f7f5ee;
+  --popover-foreground: #171815;
+  --primary: #171815;
+  --primary-foreground: #f3f1ea;
+  --secondary: #d9d8d0;
+  --secondary-foreground: #171815;
+  --muted: #deddd6;
+  --muted-foreground: #62655f;
+  --accent: #d9d8d0;
+  --accent-foreground: #171815;
+  --destructive: #c44835;
+  --border: #cbc9c0;
+  --input: #c6c4ba;
+  --ring: #3eb9ac;
+  --signal: #087f74;
+  --signal-foreground: #f7f5ee;
+  --decision: #c6501d;
+  --radius: 0.6rem;
+}
+
+.dark {
+  --background: #11110f;
+  --foreground: #f2f0e8;
+  --card: #191a17;
+  --card-foreground: #f2f0e8;
+  --popover: #191a17;
+  --popover-foreground: #f2f0e8;
+  --primary: #6fe7d8;
+  --primary-foreground: #07110f;
+  --secondary: #292b27;
+  --secondary-foreground: #f2f0e8;
+  --muted: #252622;
+  --muted-foreground: #a5a79f;
+  --accent: #292b27;
+  --accent-foreground: #f2f0e8;
+  --destructive: #ff7967;
+  --border: #32332f;
+  --input: #383a35;
+  --ring: #6fe7d8;
+  --signal: #6fe7d8;
+  --signal-foreground: #07110f;
+  --decision: #ff8a4c;
+}
+
+@theme inline {
+  --font-sans: "IBM Plex Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-signal: var(--signal);
+  --color-signal-foreground: var(--signal-foreground);
+  --color-decision: var(--decision);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+    min-width: 320px;
+    margin: 0;
+    background-image:
+      linear-gradient(to right, color-mix(in srgb, var(--border) 17%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in srgb, var(--border) 12%, transparent) 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-attachment: fixed;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ::selection {
+    color: var(--signal-foreground);
+    background: var(--signal);
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply mb-4 font-mono text-[10px] font-medium tracking-[0.16em] text-signal uppercase;
+  }
+
+  .section-title {
+    @apply max-w-3xl text-3xl leading-tight font-medium tracking-[-0.04em] text-balance sm:text-5xl;
+  }
+
+  .stat-label {
+    @apply font-mono text-[9px] tracking-[0.12em] text-muted-foreground uppercase;
+  }
+
+  .stat-value {
+    @apply mt-2 font-mono text-xl font-medium;
+  }
+
+  .case-card::before {
+    position: absolute;
+    inset: -1px auto auto -1px;
+    width: 10px;
+    height: 10px;
+    content: "";
+    border-top: 1px solid var(--signal);
+    border-left: 1px solid var(--signal);
+    opacity: 0;
+    transition: opacity 160ms ease;
+  }
+
+  .case-card:hover::before {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
