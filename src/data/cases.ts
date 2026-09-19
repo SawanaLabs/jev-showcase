@@ -230,14 +230,12 @@ export const caseStudies: CaseStudy[] = [
       "Decide whether a closing done claim is backed by a check that ran.",
     primaryUrl: "https://github.com/valentynkit/jev-belay",
     repoUrl: "https://github.com/valentynkit/jev-belay",
-    evidenceUrl:
-      "https://github.com/valentynkit/jev-belay/blob/main/measure.json",
     metrics: [
       { label: "Per gated stop", value: "1 request, 4 questions" },
       { label: "Ungated stops", value: "$0" },
     ],
     evidenceNote:
-      "Author-reported. The demo GIF was recorded against a fake Jev and the README says so; measure.json holds the corpus run.",
+      "Author-reported. The demo GIF was recorded against a fake Jev and the README says so. No corpus result is published in the repository yet.",
   },
   {
     id: "jev-commit",
@@ -250,14 +248,12 @@ export const caseStudies: CaseStudy[] = [
     decision: "Judge whether the commit message matches the staged diff.",
     primaryUrl: "https://github.com/valentynkit/jev-commit",
     repoUrl: "https://github.com/valentynkit/jev-commit",
-    evidenceUrl:
-      "https://github.com/valentynkit/jev-commit/blob/main/measure.json",
     metrics: [
       { label: "Per commit", value: "1 request" },
       { label: "Cost", value: "~4 cents / 1,000 commits" },
     ],
     evidenceNote:
-      "Author-reported from the fixture run in measure.json. No accuracy figure against a labelled corpus is published yet.",
+      "Author-reported from the README. No accuracy figure against a labelled corpus is published yet.",
   },
   {
     id: "jev-nvim",
@@ -286,15 +282,13 @@ export const caseStudies: CaseStudy[] = [
     decision: "Score each caption segment for being a sponsor read.",
     primaryUrl: "https://github.com/valentynkit/jev-skip",
     repoUrl: "https://github.com/valentynkit/jev-skip",
-    evidenceUrl:
-      "https://github.com/valentynkit/jev-skip/blob/main/measure.json",
     metrics: [
       { label: "Sponsor seconds caught", value: "77%" },
       { label: "False skips", value: "34 s / hour" },
       { label: "Cost", value: "$0.0008 / video" },
     ],
     evidenceNote:
-      "Author-reported over 23 SponsorBlock-labelled videos on 2026-09-18, answered through a Vercel AI Gateway shim rather than the direct API.",
+      "Author-reported over 23 SponsorBlock-labelled videos on 2026-09-18, answered through a Vercel AI Gateway shim rather than the direct API; the raw run is not published yet.",
   },
   {
     id: "jev-plays-pokemon-red",
